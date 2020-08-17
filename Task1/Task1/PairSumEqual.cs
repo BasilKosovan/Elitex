@@ -29,13 +29,15 @@ namespace TestTasks
             for (int i = 0; i < array2.Length; i++)  // O(N2)
             {
                 hashValue = null;
-                if (dictionary.TryGetValue(0 - array2[i], out hashValue) && !result.ContainsKey(array2[i]))
-                {
-                    result.Add(array2[i], new Tuple<List<int>, List<int>>(new List<int> { i }, hashValue));
-                }
-                else
-                {
-                    result[array2[i]].Item1.Add(i);
+                if (dictionary.TryGetValue(0 - array2[i], out hashValue)) {
+                    if (!result.ContainsKey(array2[i]))
+                    {
+                        result.Add(array2[i], new Tuple<List<int>, List<int>>(new List<int> { i }, hashValue));
+                    }
+                    else
+                    {
+                        result[array2[i]].Item1.Add(i);
+                    }
                 }
             }
 
