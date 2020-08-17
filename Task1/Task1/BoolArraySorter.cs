@@ -1,24 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Task1
+﻿namespace TestTasks
 {
-	public  static partial class Helper
+    public  static partial class Helper
 	{
-
 		public static void SortBoolArray(ref bool[] array)
 		{
 
-			int i = 0;
-			int j = array.Length - 1;
-			int length = array.Length;
+			int i = 0; //O(1)
+			int j = array.Length - 1; //O(1)
+			int length = array.Length; //O(1)
+									   //array O(N)
+
+			//Space complexity: O(1) + O(1) + O(1) + O(N) ~ O(N)
 
 			while (i < j)// <=N operations 
 			{
-				while (i < length - 1 && array[i])// <= N
+				while (i < length - 1 && !array[i])// <= N
 				{
 					i++;
 				}
@@ -28,7 +24,7 @@ namespace Task1
 					return;
 				}
 
-				while (j > 0 && array[j] && !array[j]) // <= N
+				while (j > 0 && array[j] && array[j]) // <= N
 				{
 					j--;
 				}
@@ -41,9 +37,8 @@ namespace Task1
 				i++; j--;
 			}
 
-			//O(N) + O(N) +O (N) ~ O(N)
+			//Time complexity: O(N) + O(N) +O (N) ~ O(N)
 		}
-
 	}
 }
 

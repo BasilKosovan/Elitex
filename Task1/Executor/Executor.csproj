@@ -50,9 +50,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Task1\Alhoritms.csproj">
+    <ProjectReference Include="..\Task1\Algorithms.csproj">
       <Project>{EC0EBEBF-F83E-4790-9796-4FDA2F4674C1}</Project>
-      <Name>Alhoritms</Name>
+      <Name>Algorithms</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
