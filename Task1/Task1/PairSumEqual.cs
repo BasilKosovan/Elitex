@@ -5,39 +5,41 @@ namespace TestTasks
 {
     public static partial class Helper
     {
-        public static Dictionary<int, Tuple<List<int>, List<int>>> FindPairs(int[] array)
+        public static Dictionary<int, Tuple<List<int>, List<int>>> FindPairs(int[] array1, int[] array2)
         {
-            var dictionary = new Dictionary<int, List<int>>(); //<=O(N)
+            var dictionary = new Dictionary<int, List<int>>(); //<=O(N1)
             List<int> hashValue;//O(1)
-            var result = new Dictionary<int, Tuple<List<int>, List<int>>>(); // <= O(N/2) items
-                                                                             
+            var result = new Dictionary<int, Tuple<List<int>, List<int>>>(); // <= O(N1/2) items
 
-            //Space complexity: O(N) + O(1) + O(N/2)  ~ O(N)
-            for (int i = 0; i < array.Length; i++) // O(N)
+
+            //Space complexity: O(N1) + O(1) + O(N/2)  ~ O(N1)
+            for (int i = 0; i < array1.Length; i++) // O(N1)
             {
                 hashValue = null;
-                dictionary.TryGetValue(array[i], out hashValue);
-                if (hashValue != null)
+                if (dictionary.TryGetValue(array1[i], out hashValue))
                 {
                     hashValue.Add(i);
                 }
                 else
                 {
-                    dictionary.Add(array[i], new List<int> { i });
+                    dictionary.Add(array1[i], new List<int> { i });
                 }
             }
 
-            foreach (var item in dictionary.Keys) // <= N operations // O(N)
+            for (int i = 0; i < array2.Length; i++)  // O(N2)
             {
                 hashValue = null;
-                dictionary.TryGetValue(0 - item, out hashValue);
-                if (hashValue != null && !result.ContainsKey(Math.Abs(item)))
+                if (dictionary.TryGetValue(0 - array2[i], out hashValue) && !result.ContainsKey(array2[i]))
                 {
-                    result.Add(Math.Abs(item), new Tuple<List<int>, List<int>>(dictionary[item], hashValue));
+                    result.Add(array2[i], new Tuple<List<int>, List<int>>(new List<int> { i }, hashValue));
+                }
+                else
+                {
+                    result[array2[i]].Item1.Add(i);
                 }
             }
-           
-            //Time complexity: O(N) + O(N) ~ O(N)
+
+            //Time complexity: O(N1) + O(N2) ~ O(N)
             return result;
         }
 

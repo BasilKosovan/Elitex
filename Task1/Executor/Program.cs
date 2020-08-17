@@ -8,8 +8,8 @@ namespace Executor
     {
         static void Main(string[] args)
         {
-            //TestPairSumQqual();
-            TestRotateMethod();
+            TestPairSumQqual();
+            //TestRotateMethod();
             //TestSortBoolArray();
         }
 
@@ -40,14 +40,15 @@ namespace Executor
 
         private static void TestPairSumQqual()
         {
-            var intArray = new int[] { 1, -2, 3, 4, 2, 2, 3, 5, 2, -1 };
-            var result = Helper.FindPairs(intArray);
+            var intArray1 = new int[] { 1, 2, 3, -1, -1, -2, -2, -3 };
+            var intArray2 = new int[] { -1, -2, -3, 1, 2, 2 };
+            var result = Helper.FindPairs(intArray1, intArray2);
             foreach (var item in result)
             {
                 Console.BackgroundColor = ConsoleColor.Black;
-                Console.WriteLine($"Absolute is {item.Key}. Any pairs from combination from two list: ");
+                Console.WriteLine($"Absolute is {item.Key}. Any pairs where i from the first list and j from the second list ");
                 Console.BackgroundColor = ConsoleColor.Cyan;
-                foreach (var p1 in item.Value.Item1)
+                foreach (var p1 in item.Value.Item2)
                 {
 
                     Console.Write($"{p1} ");
@@ -55,13 +56,15 @@ namespace Executor
 
                 Console.WriteLine();
                 Console.BackgroundColor = ConsoleColor.DarkGreen;
-                foreach (var p1 in item.Value.Item2)
+                foreach (var p1 in item.Value.Item1)
                 {
                     Console.Write($"{p1} ");
                 }
 
                 Console.WriteLine();
             }
+            Console.ReadKey();
         }
     }
 }
+
