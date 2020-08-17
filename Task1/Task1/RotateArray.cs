@@ -41,9 +41,8 @@ namespace TestTasks
             Reverse(ref array, 0, array.Length - k - 1); //TC: O(N-C) | SC: O(1)
             Reverse(ref array, array.Length - k, k); //TC: O(C) | SC: O(1)
             Reverse(ref array, 0, array.Length - 1); //TC: O(N) | SC: O(1)
-            //array SC: O(N)
 
-            //Space complexity: O(1) + O(1) + O(1) + O(N) ~ O(N)
+            //Space complexity: O(1) + O(1) + O(1) ~ O(1)
             //Time complexity: O(N-C) + O(C) + O(N) ~ O(N)
         }
     }

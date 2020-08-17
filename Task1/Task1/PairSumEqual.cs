@@ -10,9 +10,9 @@ namespace TestTasks
             var dictionary = new Dictionary<int, List<int>>(); //<=O(N)
             List<int> hashValue;//O(1)
             var result = new Dictionary<int, Tuple<List<int>, List<int>>>(); // <= O(N/2) items
-                                                                             //array O(N)			
+                                                                             
 
-            //Space complexity: O(N) + O(1) + O(N/2) + O(N) ~ O(N)
+            //Space complexity: O(N) + O(1) + O(N/2)  ~ O(N)
             for (int i = 0; i < array.Length; i++) // O(N)
             {
                 hashValue = null;

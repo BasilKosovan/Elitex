@@ -8,9 +8,8 @@
 			int i = 0; //O(1)
 			int j = array.Length - 1; //O(1)
 			int length = array.Length; //O(1)
-									   //array O(N)
 
-			//Space complexity: O(1) + O(1) + O(1) + O(N) ~ O(N)
+			//Space complexity: O(1) + O(1) + O(1)  ~ O(1)
 
 			while (i < j)// <=N operations 
 			{
