@@ -2,7 +2,7 @@
 {
     public  static partial class Helper
 	{
-		public static void SortBoolArray(ref bool[] array)
+		public static void SortBoolArray(bool[] array)
 		{
 
 			int i = 0; //O(1)

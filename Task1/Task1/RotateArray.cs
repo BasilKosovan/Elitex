@@ -4,7 +4,7 @@ namespace TestTasks
 {
     public static partial class Helper
     {
-        private static void Reverse(ref int[] arr, int start, int end)
+        private static void Reverse(int[] arr, int start, int end)
         {
             int temp; // O(1)
             while (start < end)
@@ -17,7 +17,7 @@ namespace TestTasks
             }
         }
 
-        public static void Rotate(ref int[] array, int k)
+        public static void Rotate(int[] array, int k)
         {
             if (k < 0)
             {
@@ -38,9 +38,9 @@ namespace TestTasks
             }
 
 
-            Reverse(ref array, 0, array.Length - k - 1); //TC: O(N-C) | SC: O(1)
-            Reverse(ref array, array.Length - k, k); //TC: O(C) | SC: O(1)
-            Reverse(ref array, 0, array.Length - 1); //TC: O(N) | SC: O(1)
+            Reverse(array, 0, array.Length - k - 1); //TC: O(N-C) | SC: O(1)
+            Reverse(array, array.Length - k, array.Length - 1); //TC: O(C) | SC: O(1)
+            Reverse(array, 0, array.Length - 1); //TC: O(N) | SC: O(1)
 
             //Space complexity: O(1) + O(1) + O(1) ~ O(1)
             //Time complexity: O(N-C) + O(C) + O(N) ~ O(N)

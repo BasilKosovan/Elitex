@@ -9,8 +9,8 @@ namespace Executor
         static void Main(string[] args)
         {
             //TestPairSumQqual();
-            //TestRotateMethod();
-            TestSortBoolArray();
+            TestRotateMethod();
+            //TestSortBoolArray();
         }
 
         private static void TestSortBoolArray()
@@ -25,23 +25,23 @@ namespace Executor
             for (int i = 0; i < listOfBoolArrays.Count; i++)
             {
                 var array = listOfBoolArrays[i];
-                Helper.SortBoolArray(ref array);
+                Helper.SortBoolArray(array);
             }
         }
 
         private static void TestRotateMethod()
         {
             var intArray = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            Helper.Rotate(ref intArray, 3);
-            Helper.Rotate(ref intArray, 9);
-            Helper.Rotate(ref intArray, 10);
-            Helper.Rotate(ref intArray, 0);
+            Helper.Rotate(intArray, 3);
+            Helper.Rotate(intArray, 9);
+            Helper.Rotate(intArray, 10);
+            Helper.Rotate(intArray, 0);
         }
 
         private static void TestPairSumQqual()
         {
             var intArray = new int[] { 1, -2, 3, 4, 2, 2, 3, 5, 2, -1 };
-            var result = Helper.FindPairs(ref intArray);
+            var result = Helper.FindPairs(intArray);
             foreach (var item in result)
             {
                 Console.BackgroundColor = ConsoleColor.Black;

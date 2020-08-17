@@ -5,7 +5,7 @@ namespace TestTasks
 {
     public static partial class Helper
     {
-        public static Dictionary<int, Tuple<List<int>, List<int>>> FindPairs(ref int[] array)
+        public static Dictionary<int, Tuple<List<int>, List<int>>> FindPairs(int[] array)
         {
             var dictionary = new Dictionary<int, List<int>>(); //<=O(N)
             List<int> hashValue;//O(1)
